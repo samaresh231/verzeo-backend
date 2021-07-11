@@ -74,7 +74,7 @@ app.post('/login', (req, res) => {
 
 app.post('/send', async (req, res) => {
     try {
-        const {name, message} = req.body;
+        const {name, message, email} = req.body;
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -86,7 +86,7 @@ app.post('/send', async (req, res) => {
         // send mail with defined transport object
         let info = await transporter.sendMail({
             from: `"Verzeo" <TESTING_EMAIL>`, // sender address
-            to: "SENDER'S EMAIL", // list of receivers
+            to: `${email}`, // list of receivers
             subject: "Node mailer example", // Subject line
             text: "Hello world?", // plain text body
             html: `<h1>Hello ${name}</h1>
