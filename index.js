@@ -105,6 +105,6 @@ app.post('/send', async (req, res) => {
     }
 })
 
-app.listen(3000, () => {
-    console.log("listening to port 3000")
+app.listen(8000, () => {
+    console.log("listening to port 8000")
 })
