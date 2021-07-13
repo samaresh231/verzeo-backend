@@ -5,8 +5,8 @@ async function mailer(mailOptions) {
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'testing.samaresh@gmail.com',
-                pass: 'testing.samaresh.123'
+                user: TEST_EMAIL,
+                pass: TEST_PASSWORD
             }
         });
 

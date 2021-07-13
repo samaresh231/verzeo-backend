@@ -51,7 +51,7 @@ app.post('/signup', async (req, res) => {
         hashCheckMap[email] = activationLinkHash
 
         const mailOptions = {
-            from: `"Verzeo" <testing.samaresh@gmail.com>`, // sender address
+            from: `"Verzeo" <TEST_EMAIL>`, // sender address
             to: `${email}`, // list of receivers
             subject: "Activate your account", // Subject line
             text: `go to this link to activate your account http://localhost:8000/auth?code=${secretCode}&email=${email}`, // plain text body
