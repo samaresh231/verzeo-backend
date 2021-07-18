@@ -5,6 +5,8 @@ const validationCheck = require('./validationCheck')
 const mailer = require('./mailer')
 const bcrypt = require('bcrypt')
 const { v4: uuidv4 } = require('uuid')
+const multer = require('multer');
+const fileUpload = require('./multer_config');
 
 require('./authenticate');
 
@@ -195,6 +197,16 @@ app.post('/resetpassword', async (req, res) => {
             message: "password doesn't match"
         })
     }
+})
+
+app.post('/upload', fileUpload.single('file'), (req, res) => {
+    res.status(200).json({
+        message: 'successful'
+    })
+}, (error, req, res) => {
+    res.status(404).json({
+        message: error.message
+    })
 })
 
 app.listen(8000, () => {
