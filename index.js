@@ -5,7 +5,6 @@ const validationCheck = require('./validationCheck')
 const mailer = require('./mailer')
 const bcrypt = require('bcrypt')
 const { v4: uuidv4 } = require('uuid')
-const multer = require('multer');
 const fileUpload = require('./multer_config');
 
 require('./authenticate');
